@@ -7,14 +7,18 @@
 
 # Task 1: calculate the production rate per hour
 def production_rate_per_hour:
-  # remove the constant and implement this function
-  -1
+  . * 221 * (
+    if . < 5  then 1
+    elif . < 9  then 0.9
+    elif . < 10 then 0.8
+    else 0.77
+    end
+  )
 ;
 
 # Task 2: calculate the number of working items produces per minute
 def working_items_per_minute:
-  # remove the constant and implement this function
-  -2
+  . | production_rate_per_hour/60 | floor
 ;
 
 
